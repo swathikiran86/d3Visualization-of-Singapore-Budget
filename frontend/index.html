@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="budgetExpenditureApp" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Singapore Budget Expenditure Visualization</title>
+		<!--scripts-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/javascript/controllers/app.js"></script>
+		<script type="text/javascript" src="/javascript/controllers/budgetExpenditureController.js"></script>
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<!--stylesheets-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/style.css" /> 
+		
+	</head>
+	<body>
+		
+		<div class="container" ng-controller="budgetExpenditureController">
+			<h1 class="text-center">Visualization of Singapore Budget Expenditure</h1>
+			<h3 class="text-center">As observed over the past two decades</h3>
+			<br><br><br>
+			<div class="row first-placeholder">
+				<div class="col-sm-12">
+					<h4>Graph One:</h4>
+					<h5>Sector-wise Budget Expenditure for the years from 1999 to 2018.</h5>
+					<h5>Each line graph below represents the investment/expenditure done by Singapore Govt in a particular sector.  
+						Each dot over the line highlights the amount - in Million Singapore Dollars (SGD). </h5>
+					<div id="multiLineGraph"></div>
+				</div>
+			</div>
+			<br/>
+			<div class="row third-placeholder">
+				<div class="col-sm-12">
+					<h4>Graph Two:</h4>
+					<h5>Ministry wise expenditure under each sector for a span of 5 years is discussed below. 
+						The time scale can be selected from the below dropdown menu (Default span is "2018-2014" when selected from the graph one above).
+						Clicking on the Sector legend of multiple line graph (graph one) we arrive at this graph. Here, 
+						can compare the amount spent by the Government on each ministry of a sector for a period of
+						 5 year.
+						
+					</h5>
+					<form name="myForm" >
+						<div class="form-group">
+							<label for="yearSelection">Select Time Span</label>
+							<select name="yearSelection" id="yearSelection" ng-model="yearGroupSelection.model" ng-change="yearGroupChanged()">
+								<option ng-repeat="option in yearGroupSelection.yearsList" value="{{option.value}}" >{{option.name}}</option>
+							</select>
+						</div>
+					</form>
+					<div id="groupedBarGraph"></div>
+				</div>
+			</div>
+			<br/><br/><br/>
+			<div class="row second-placeholder">
+				<div class="col-sm-12">
+					<h4>Graph Three:</h4>
+					<h5>Expenditure/Investments in each sector are made under various ministries. And each investment is further segregated into two types (Opearting and Deveopment).
+						The two different fill colors indicate the two types of investment.
+						Clicking on a data point on the multiple line graph (graph one) we can investigate the amount spent on each of those ministries that 
+						fall under that sector for the year clicked as shown below.
+					</h5>
+					<h5 style="color:#120af1">{{dataForSectorMinistryExpenditure.sector}} sector with its ministries as categories 
+						for the year {{dataForSectorMinistryExpenditure.year}} </h5>
+					<div id="horizontalBarGraph"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
