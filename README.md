@@ -1,17 +1,31 @@
-# d3v5Visualization
+# d3Visualization
 
 Visualization of budget expenditure of Singapore (known to be the quickest nation to develop in a short span) using D3 JS, AngularJS, NodeJS and MySQL. This study is to analyze their budget expenditures for over the last 2 decades; not just with the numbers but also in specific areas where the money was/is being invested.
-The below are the questions I would like to investigate by visualizing their budget expenditure data.
-1) Which is the most funded sector amongst all the sectors and why?
-2) Any drastic changes in their expenditure in recent years?
-3) Which is the most funded ministry and why?
 
 Dataset
 Singapore budget expenditure data is available on Singapore Government data website. The dataset has been picked up from the below link: https://data.gov.sg/dataset/government-fiscal-position-annual?resource_id=7b4af397- 3e8f-40de-9208-90d168afc810
 
-Results:
+Repository organization:
 
-Screenshots available in the Results folder for each graph.
+government-total-expenditure.csv : Dataset used
+
+index.js : Import the components from backend javascript components.
+
+backend/backend.js : Queries to fetch the data from database are present in this file.
+backend/mysqldb.js : Database details are declared in this file.
+
+frontend/javascript/controllers/app.js : Application is defined in this file.
+frontend/javascript/controllers/budgetExpenditureController.js : d3 code for visulaising the graphs is present in this file.
+frontend/stylesheets/style.css : CSS styles declarations.
+frontend/index.html : HTML file containing the web page design.
+
+package-lock.json : Automatically generated for any operations where npm modifies package.json.
+package.json: npm version and details of the publish
+
+Results :  This folder consists of the screenshots of the graphs plotted using d3Js.
+
+
+Results Discussion:
 
 1. Graph One - Multiple-Line graph
 This graph illustrates the growth of expenditures in million Singapore Dollars (SGD) within its major sectors for past 20 years. Each line in the graph represents a sector. On hovering over the Sector line, the Sector’s Name is highlighted on both top and bottom, and on hovering on the sector’s name in the bottom the respective line is highlighted. By clicking on the sector’s name, you will be redirected to “Graph two”.
