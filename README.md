@@ -10,6 +10,9 @@ Dataset
 Singapore budget expenditure data is available on Singapore Government data website. The dataset has been picked up from the below link: https://data.gov.sg/dataset/government-fiscal-position-annual?resource_id=7b4af397- 3e8f-40de-9208-90d168afc810
 
 Results:
+
+Screenshots available in the Results folder for each graph.
+
 1. Graph One - Multiple-Line graph
 This graph illustrates the growth of expenditures in million Singapore Dollars (SGD) within its major sectors for past 20 years. Each line in the graph represents a sector. On hovering over the Sector line, the Sector’s Name is highlighted on both top and bottom, and on hovering on the sector’s name in the bottom the respective line is highlighted. By clicking on the sector’s name, you will be redirected to “Graph two”.
 Also, each circular data point represents the amount spent on each sector on that particular year. On hovering over this circular point, the value is highlighted and will be redirected to “Graph three” when clicked.
